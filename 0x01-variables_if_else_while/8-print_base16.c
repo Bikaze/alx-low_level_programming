@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i = 0;
-	char hexadec[] = "0123456789ABCDEF";
+	char hexadec[] = "0123456789abcdef";
 
 	for (i = 0; i < 15; i++)
 	{
