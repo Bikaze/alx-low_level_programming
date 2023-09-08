@@ -16,7 +16,7 @@ int main(void)
 	/* your code goes there */
 	if (n == 0)
 	{
-		printf("Last digit of n is \n", n);
+		printf("Last digit of n is \n");
 	}
 	else if (n < 0)
 	{
