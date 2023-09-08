@@ -17,19 +17,16 @@ int main(void)
 		{
 			for (k = 0; k < 10; k++)
 			{
-				if (i < j)
+				if (i < j && j < k)
 				{
-					if (j < k)
+					if (i + j + k > 3)
 					{
-						if (i + j + k > 3)
-						{
-							putchar(',');
-							putchar(' ');
-						}
-						putchar('0' + i);
-						putchar('0' + j);
-						putchar('0' + k);
+						putchar(',');
+						putchar(' ');
 					}
+					putchar('0' + i);
+					putchar('0' + j);
+					putchar('0' + k);
 				}
 			}
 		}
