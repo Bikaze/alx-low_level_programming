@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
   *main - program entry point
   *Return: will always return 0
@@ -9,8 +9,8 @@ int main(void)
 
 	for (int i = 0; i < sizeof(string) / sizeof(string[0]); i++)
 	{
-		putchar(string[i]);
+		_putchar(string[i]);
 	}
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
