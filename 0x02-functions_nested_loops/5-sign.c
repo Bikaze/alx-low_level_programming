@@ -9,14 +9,16 @@ int print_sign(int n)
 
 	if (message == '0')
 	{
+		_putchar(message);
 		return (0);
 	}
 	else if (message == '+')
 	{
+		_putchar(message);
 		return (1);
 	}
 	else
-	{
+	{	_putchar(message);
 		return (-1);
 	}
 }
