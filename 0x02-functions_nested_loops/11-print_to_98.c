@@ -8,8 +8,9 @@ void printer(int  n)
 	if ((n / 100) > 0)
 	{
 		_putchar(n / 100 + '0');
+		n %= 100;
 	}
-	if (((n / 10) % 10) > 0)
+	if ((n / 10) > 0)
 	{
 		_putchar(n / 10 + '0');
 	}
