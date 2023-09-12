@@ -1,10 +1,13 @@
 #include "main.h"
 /**
-  *main - program entry point
-  *Return: will always return 0
+  *print_alphabet - program function
+  *Return: will always return nothing
   */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	for (int i = 0; i < 26; i++)
+	{
+		_putchar(97 + i);
+	}
+	_putchar('\n');
 }
