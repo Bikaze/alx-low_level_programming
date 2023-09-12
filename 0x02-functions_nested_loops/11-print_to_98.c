@@ -43,13 +43,13 @@ void print_to_98(int n)
 			if (n < 0)
 			{
 				_putchar('-');
-				printer(-1 * n);
+				printer(-1 * i);
 				_putchar(',');
 				_putchar(' ');
 			}
 			else
 			{
-				printer(n);
+				printer(i);
 				_putchar(',');
 				_putchar(' ');
 			}
