@@ -1,21 +1,14 @@
 #include "main.h"
 /**
-  *print_alphabet - program function
+  *print_alphabet_x10 - program function
   *Return: will always return nothing
   */
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
-	char letter;
 	int i = 0;
 
 	for (i = 0; i < 10; i++)
 	{
-		letter = 'a';
-		while (letter <= 'z')
-		{
-			_putchar(letter);
-			letter++;
-		}
-		_putchar('\n');
+		print_alphabet();
 	}
 }
