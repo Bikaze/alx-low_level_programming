@@ -5,11 +5,11 @@
   */
 void printer(int  n)
 {
-	if (n % 100 != 0)
+	if ((n % 100) > 0)
 	{
 		_putchar(n / 100 + '0');
 	}
-	if (n % 10 != 0)
+	if ((n % 10) > 0)
 	{
 		_putchar(n / 10 + '0');
 	}
@@ -23,7 +23,7 @@ void printer(int  n)
 
 void print_to_98(int n)
 {
-	int i = 0;
+	int i;
 
 	if (n > 98)
 	{
