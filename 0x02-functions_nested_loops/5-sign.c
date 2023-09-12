@@ -1,3 +1,4 @@
+#include "main.h"
 /**
   *print_sign - program function
   *@n: will be holding a number to be checked
