@@ -14,5 +14,6 @@ int main(void)
 	_putchar('a');
 	_putchar('r');
 	_putchar('\n');
+	print_alphabet_x10();
 	return (0);
 }
