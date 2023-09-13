@@ -3,7 +3,7 @@
   *print_times_table - program function to give times table
   *@n: dimension of the table
   */
-void Print_times_table(int n)
+void print_times_table(int n)
 {
 	int i = 0;
 	int j;
