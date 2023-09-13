@@ -8,6 +8,11 @@ void print_times_table(int n)
 	int i = 0;
 	int j;
 
+	if (n > 15 || n < 0)
+	{
+		i = n + 1;
+	}
+
 	while (i <= n)
 	{
 		j = 0;
