@@ -1,1 +1,1 @@
-We are now debugging
+we are debugging
