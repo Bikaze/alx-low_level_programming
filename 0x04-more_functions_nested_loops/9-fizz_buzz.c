@@ -1,4 +1,13 @@
-#include "main.h"
+#include <unistd.h>
+/**
+ *_putchar - function
+ *@c: will hold character to be printed
+ *Return: will write c to the output
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
 
 /**
   *fiz - helper function
