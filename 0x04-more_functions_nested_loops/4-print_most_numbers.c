@@ -11,6 +11,7 @@ void print_most_numbers(void)
 	{
 		if (nbr == '2' || nbr == '4')
 		{
+			nbr++;
 			continue;
 		}
 		else
