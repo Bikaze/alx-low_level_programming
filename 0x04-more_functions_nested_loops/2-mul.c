@@ -6,5 +6,5 @@
   */
 int mul(int a, int b)
 {
-	return (n * k);
+	return (a * b);
 }
