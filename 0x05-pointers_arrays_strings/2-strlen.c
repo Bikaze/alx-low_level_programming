@@ -1,5 +1,5 @@
 /**
-  *_strlen(char *s); - program function
+  *_strlen - program function
   *@s: will be holding a pointer to a string
   *Return: will return nothing
   */
