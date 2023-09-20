@@ -28,6 +28,11 @@ char *cap_string(char *a)
 {
 	int i = 0;
 
+	if (a[0] >= 97 && a[0] <= 122)
+	{
+		a[i] -= 32;
+	}
+
 	while (a[i] != '\0')
 	{
 		if (i > 0 && a[i] >= 97 && a[i] <= 122 && check(a[i - 1]))
