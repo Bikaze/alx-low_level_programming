@@ -30,13 +30,9 @@ char *cap_string(char *a)
 
 	while (a[i] != '\0')
 	{
-		if (a[i] >= 97 && a[i] <= 122 && check(a[i - 1]))
+		if (a[i] == a[0] || a[i] >= 97 && a[i] <= 122 && check(a[i - 1]))
 		{
 			a[i] -= 32;
-		}
-		if (a[i] == '\t')
-		{
-			a[i] = ' ';
 		}
 		i++;
 	}
