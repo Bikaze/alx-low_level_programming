@@ -10,7 +10,7 @@ int check(char *s, char *c)
 
 	while (s[i] != '\0')
 	{
-		if (s[i] != c[i])
+		if (s[i] != c[i] || c[i] == '\0')
 		{
 			return (0);
 		}
