@@ -20,18 +20,24 @@ int check(char *s, char c)
 }
 
 /**
-  *_strspn - finds character from "accept" in beginning of string "s"
+  *_strpbrk - finds the first character from "accept" in string "s"
   *@s: will be holding a pointer to a string
   *@accept: will hold a pointer to a string
-  *Return: will return an unsigned int
+  *Return: will return a pointer to a character
   */
-unsigned int _strspn(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i = 0;
+	int i = 0;
+	char *p = 0;
 
-	while (check(accept, s[i]) && s[i] != '\0')
+	while (s[i] != '\0')
 	{
+		if (check(accept, s[i]))
+		{
+			p = &s[i];
+			return (p);
+		}
 		i++;
 	}
-	return (i);
+	return (p);
 }
