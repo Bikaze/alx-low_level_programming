@@ -8,6 +8,11 @@ int check(char *s, char *c)
 {
 	int i = 0;
 
+	if (s == 0 || c == 0)
+	{
+		return (0);
+	}
+
 	while (s[i] != '\0')
 	{
 		if (s[i] != c[i] || c[i] == '\0')
