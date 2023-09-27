@@ -23,7 +23,7 @@ int _sqrt0_recursion(int n, int i)
 }
 
 /**
-  *_sqrt_recursion - returns the square root of n
+  *_sqrt_recursion - returns the square root of k
   *@k: will hold an integer
   *Return: will return an integer
   */
