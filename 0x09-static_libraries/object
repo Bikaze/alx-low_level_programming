@@ -1,0 +1,7 @@
+# Assuming all your .c files are in the current directory
+# Compile each .c file into a separate .o file
+for source_file in *.c; do
+    # Use the -c flag to generate object files (.o) without linking
+    gcc -c "$source_file" -o "${source_file%.c}.o"
+done
+
