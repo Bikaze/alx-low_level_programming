@@ -3,14 +3,14 @@
 #include <stdbool.h>
 /**
   *check - helper function
-  *@s: takes the value entered
+  *@sum: takes the value entered
   *Return: integer
   */
-int check(int s)
+int check(int sum)
 {
 	int i = 0;
 
-	while (s > 0)
+	while (sum > 0)
 	{
 		if (sum >= 25)
 		{
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 	sum = atoi(argv[1]);
-	i = check(sum)
+	i = check(sum);
 	printf("%d\n", i);
 	return (0);
 }
