@@ -9,10 +9,11 @@
   */
 bool check(char *s)
 {
-	char* endptr;
-    	strtol(s, &endptr, 10);
+	char *endptr;
 
-    	return (*endptr == '\0');
+	strtol(s, &endptr, 10);
+
+	return (*endptr == '\0');
 }
 
 /**
