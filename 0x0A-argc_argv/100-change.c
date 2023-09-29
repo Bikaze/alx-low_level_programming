@@ -1,33 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
 /**
-  *main - entry for the program
-  *@argc: argument count
-  *@argv: argument vector
-  *Return: will return and integer
+  *check - helper function
+  *@s: takes the value entered
+  *Return: integer
   */
-int main(int argc, char *argv[])
+int check(int s)
 {
 	int i = 0;
-	int sum;
 
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-
-	if (atoi(argv[1]) <= 0)
-	{
-		printf("0\n");
-		return (0);
-	}
-
-	sum = atoi(argv[1]);
-
-	while (sum > 0)
+	while (s > 0)
 	{
 		if (sum >= 25)
 		{
@@ -55,6 +38,32 @@ int main(int argc, char *argv[])
 			i++;
 		}
 	}
+	return (i);
+}
+
+
+/**
+  *main - entry for the program
+  *@argc: argument count
+  *@argv: argument vector
+  *Return: will return and integer
+  */
+int main(int argc, char *argv[])
+{
+	int sum, i;
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	if (atoi(argv[1]) <= 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+	sum = atoi(argv[1]);
+	i = check(sum)
 	printf("%d\n", i);
 	return (0);
 }
