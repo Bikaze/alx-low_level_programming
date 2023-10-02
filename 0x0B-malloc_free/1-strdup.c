@@ -28,9 +28,11 @@ char *_strdup(char *str)
 	{
 		s[j] = str[j];
 	}
+
 	if (str[j] != '\0')
 	{
 		return (NULL);
 	}
+
 	return (s);
 }
