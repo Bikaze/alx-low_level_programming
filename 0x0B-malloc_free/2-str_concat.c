@@ -31,7 +31,7 @@ char *str_concat(char *s1, char *s2)
 		}
 		i++;
 	}
-	s = (char *)malloc(sizeof(char) * (k + 1));
+	s = (char *)malloc(sizeof(char) * (k));
 	if (s == NULL)
 	{
 		return (NULL);
