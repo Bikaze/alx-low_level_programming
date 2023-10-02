@@ -20,12 +20,17 @@ char *_strdup(char *str)
 	{
 		i++;
 	}
+	i++;
 
-	s = (void *)malloc(sizeof(char) * i);
+	s = (char *)malloc(sizeof(char) * i);
 
 	for (j = 0; j < i; j++)
 	{
 		s[j] = str[j];
+	}
+	if (str[j] != '\0')
+	{
+		return (NULL);
 	}
 	return (s);
 }
