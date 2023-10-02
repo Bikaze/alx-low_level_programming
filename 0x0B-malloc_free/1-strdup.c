@@ -11,17 +11,17 @@ char *_strdup(char *str)
 	int i = 0;
 	int j = 0;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	while (str[i] != '\0')
 	{
 		i++;
 	}
 
 	s = (void *)malloc(sizeof(char) * i);
-
-	if (str == NULL)
-	{
-		return (NULL);
-	}
 
 	for (j = 0; j < i; j++)
 	{
