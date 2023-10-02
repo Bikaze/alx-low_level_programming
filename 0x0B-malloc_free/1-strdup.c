@@ -21,20 +21,16 @@ char *_strdup(char *str)
 		i++;
 	}
 
-	s = (char *)malloc(sizeof(char) * i);
+	s = (char *)malloc(sizeof(char) * (i + 1));
 
-	for (j = 0; j < i; j++)
+	for (j = 0; j < i + 1; j++)
 	{
 		s[j] = str[j];
 	}
 
-	if (str[j] != '\0')
+	if (i == 0)
 	{
 		return (NULL);
-	}
-	else
-	{
-		s[j] = '\0';
 	}
 
 	return (s);
