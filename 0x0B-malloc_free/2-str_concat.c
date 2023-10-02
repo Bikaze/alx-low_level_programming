@@ -1,4 +1,19 @@
 #include <stdlib.h>
+/**
+  *len - helper function
+  *@p: pointer to char
+  *Return: integer
+  */
+int len(char *p)
+{
+	int i = 0;
+
+	while (p[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 /**
   *str_concat - join two strings
@@ -19,18 +34,9 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	while (s1[i] != '\0' || s2[i] != '\0')
-	{
-		if (s1[i] != '\0' && s2[i] != '\0')
-		{
-			k += 2;
-		}
-		else
-		{
-			k++;
-		}
-		i++;
-	}
+
+	k = len(s1) + len(s2);
+
 	s = (char *)malloc(sizeof(char) * (k));
 	if (s == NULL)
 	{
