@@ -16,7 +16,7 @@ char *_strdup(char *str)
 		i++;
 	}
 
-	s = (void *)malloc(sizeof(char) * (i - 1));
+	s = (void *)malloc(sizeof(char) * i);
 
 	if (str == NULL)
 	{
