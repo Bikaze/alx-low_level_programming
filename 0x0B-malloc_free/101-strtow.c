@@ -72,6 +72,11 @@ char **alloc(int j, int wlength[])
 	char **s;
 	int i = 0, k = 0;
 
+	if (j == 0)
+	{
+		return (NULL);
+	}
+
 	s = (char **) malloc((j + 1) * sizeof(char *));
 	if (s == NULL)
 	{
