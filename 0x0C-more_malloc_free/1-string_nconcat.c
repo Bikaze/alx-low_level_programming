@@ -51,7 +51,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		j++;
 	}
 	i = 0;
-	while (j < k)
+	while (j <= k)
 	{
 		s[j] = s2[i];
 		j++;
