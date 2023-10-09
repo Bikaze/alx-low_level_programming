@@ -1,4 +1,9 @@
-#include "dog.h"
+struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+};
 /**
   *init_dog - initialize struct dog instance
   *@d: pointer to a dog instance
