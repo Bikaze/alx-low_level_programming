@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "dog.h"
 /**
   *new_dog - print struct dog instance
@@ -15,9 +16,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (d == NULL)
 		return (NULL);
 
-	d->name = name;
+	d->name = malloc(sizeof(char) * strlen(name));
+	if (d->name == NULL)
+	{
+		free (d);
+		return (NULL);
+	}
+	strcpy(d->name, name);
 	d->age = age;
-	d->owner = owner;
+	d->owner = malloc(sizeof(char) * strlen(owner));
+	if (d->owner == NULL)
+	{
+		free (d);
+		return (NULL);
+	}
+	strcpy(d->owner, name);
 
 	return (d);
 }
