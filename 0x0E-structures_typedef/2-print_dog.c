@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include "dog.h"
 /**
   *print_dog - print struct dog instance
@@ -17,7 +18,7 @@ void print_dog(struct dog *d)
 			printf("Name: (nil)\n");
 		else
 			printf("Name: %s\n", d->name);
-		if (d->age == 0)
+		if (isnan(d->age))
 			printf("Age: (nil)\n");
 		else
 			printf("Age: %f\n", d->age);
