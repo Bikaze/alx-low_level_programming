@@ -1,3 +1,4 @@
+#include <stdlib.h>
 /**
   *print_name - print the name of a person
   *@name: name of the person
