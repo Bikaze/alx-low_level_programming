@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
 		if (i == bytes - 1)
 		{
 			printf("%02hhx\n", code[i]);
+			break;
 		}
 		printf("%02hhx ", code[i]);
 	}
