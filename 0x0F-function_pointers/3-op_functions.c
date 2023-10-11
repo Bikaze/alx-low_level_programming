@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 /**
   *op_add - function to add two numbers
   *@a: first number
