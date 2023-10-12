@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdarg.h>
 /**
   *print_all - function to print unknown number of arguments
@@ -25,7 +24,7 @@ void print_all(const char * const format, ...)
 					s = va_arg(ap, char *);
 					if (s == NULL)
 					{
-						printf("%s(ni)", sep);
+						printf("%s(nil)", sep);
 						break;
 					}
 					printf("%s%s", sep, s);
