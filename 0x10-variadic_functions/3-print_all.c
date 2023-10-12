@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 /**
   *print_all - function to print unknown number of arguments
@@ -12,9 +13,14 @@ void print_all(const char * const format, ...)
 	int i;
 	float f;
 	char *sep = ", ", *fmt = (char *) format, *s;
-
+	
+	if (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
 	va_start(ap, format);
-	while (*fmt && format != NULL)
+	while (*fmt)
 	{
 		if (*(fmt + 1) == '\0')
 			sep = "";
