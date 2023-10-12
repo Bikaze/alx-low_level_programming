@@ -14,8 +14,8 @@ void print_all(const char * const format, ...)
 	char *sep = "", *fmt = (char *) format, *s;
 
 	va_start(ap, format);
-	if (format)
-	{
+	/*if (format)
+	{*/
 		while (*fmt)
 		{
 			switch (*(fmt++))
@@ -44,7 +44,7 @@ void print_all(const char * const format, ...)
 			}
 			sep = ", ";
 		}
-	}
+	/*}*/
 	va_end(ap);
 	printf("\n");
 }
