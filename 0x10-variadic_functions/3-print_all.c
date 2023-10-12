@@ -22,11 +22,8 @@ void print_all(const char * const format, ...)
 			{
 				case 's':
 					s = va_arg(ap, char *);
-					if (s == NULL)
-					{
-						printf("%s(nil)", sep);
-						break;
-					}
+					if (!s)
+						s = "(nil)";
 					printf("%s%s", sep, s);
 					break;
 				case 'c':
