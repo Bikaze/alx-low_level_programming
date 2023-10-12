@@ -8,17 +8,15 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	char c;
-	int i;
-	float f;
-	char *sep = "", *fmt = (char *) format, *s;
+	int i = 0;
+	char *sep = "", *s;
 
 	va_start(ap, format);
-	/*if (format)
-	{*/
-		while (*fmt && format)
+	if (format)
+	{
+		while (format[i])
 		{
-			switch (*(fmt++))
+			switch (format[i])
 			{
 				case 's':
 					s = va_arg(ap, char *);
@@ -27,21 +25,22 @@ void print_all(const char * const format, ...)
 					printf("%s%s", sep, s);
 					break;
 				case 'c':
-					c = (char) va_arg(ap, int);
-					printf("%s%c", sep, c);
+					printf("%s%c", sep, va_arg(ap, int));
 					break;
 				case 'i':
-					i = va_arg(ap, int);
-					printf("%s%d", sep, i);
+					printf("%s%d", sep, va_arg(ap, int));
 					break;
 				case 'f':
-					f = (float) va_arg(ap, double);
-					printf("%s%f", sep, f);
+					printf("%s%f", sep, va_arg(ap, double));
 					break;
+				default:
+					i++;
+					continue;
 			}
 			sep = ", ";
+			i++;
 		}
-	/*}*/
+	}
 	va_end(ap);
 	printf("\n");
 }
