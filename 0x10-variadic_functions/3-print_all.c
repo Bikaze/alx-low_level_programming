@@ -8,7 +8,6 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	char *s;
 	char c;
 	int i;
 	float f;
@@ -43,6 +42,7 @@ void print_all(const char * const format, ...)
 				printf("%f%s", f, sep);
 				break;
 		}
+	}
 	va_end(ap);
 	printf("\n");
 }
