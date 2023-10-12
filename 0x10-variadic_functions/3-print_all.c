@@ -8,12 +8,10 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	char *s;
 	char c;
 	int i;
 	float f;
-	char *sep = ", ";
-	char *fmt = (char *) format;
+	char *sep = ", ", *fmt = (char *) format, *s;
 
 	va_start(ap, format);
 	while (*fmt)
@@ -28,12 +26,10 @@ void print_all(const char * const format, ...)
 				if (s == NULL)
 				{
 					printf("(nil)%s", sep);
+					break;
 				}
-				else
-				{
-					printf("%s%s", s, sep);
-				}
-				break;	
+				printf("%s%s", s, sep);
+				break;
 			case 'c':
 				c = (char) va_arg(ap, int);
 				printf("%c%s", c, sep);
