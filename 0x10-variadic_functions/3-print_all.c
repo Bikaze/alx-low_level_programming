@@ -14,11 +14,10 @@ void print_all(const char * const format, ...)
 	char *sep = ", ", *fmt = (char *) format, *s;
 
 	va_start(ap, format);
-	while (*fmt)
+	while (*fmt && format != NULL)
 	{
-		if (!*(fmt + 1))
+		if (*(fmt + 1) == '\0')
 			sep = "";
-
 		switch (*(fmt++))
 		{
 			case 's':
