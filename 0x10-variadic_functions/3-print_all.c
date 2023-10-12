@@ -13,9 +13,9 @@ void print_all(const char * const format, ...)
 	float f;
 	char *sep = "", *fmt = (char *) format, *s;
 
+	va_start(ap, format);
 	if (format)
 	{
-		va_start(ap, format);
 		while (*fmt)
 		{
 			switch (*(fmt++))
