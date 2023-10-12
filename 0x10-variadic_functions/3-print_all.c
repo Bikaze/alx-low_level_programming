@@ -16,8 +16,6 @@ void print_all(const char * const format, ...)
 	va_start(ap, format);
 	while (*fmt)
 	{
-		if (!*(fmt + 1))
-			sep = "";
 		switch (*(fmt++))
 		{
 			case 's':
