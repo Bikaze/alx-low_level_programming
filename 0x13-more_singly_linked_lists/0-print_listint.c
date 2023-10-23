@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "lists.h"
 /**
   *print_listint - print all elements of a list(structure)
   *@h: a pointer to a listint_t list
