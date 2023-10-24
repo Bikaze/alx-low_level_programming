@@ -37,24 +37,24 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	else
 	{
-		prev = head;
-		curr = head->next;
+		prev = *head;
+		curr = (*head)->next;
 
 		if (idx == 0)
 			return (add_nodeint(head, n));
 
 		while (curr != NULL && count <= idx)
 		{
-			if (count == index)
+			if (count == idx)
 			{
-				new = (list_int *)malloc(sizeof(list_int));
+				new = (listint_t *)malloc(sizeof(listint_t));
 				new->n = n;
 				new->next = curr;
 				prev->next = new;
 				return (new);
 			}
 			curr = curr->next;
-			prev = prev->prev;
+			prev = prev->next;
 			count++;
 		}
 	}
