@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "lists.h"
 /**
   *insert_nodeint_at_index - insert an element in a list(structure)
