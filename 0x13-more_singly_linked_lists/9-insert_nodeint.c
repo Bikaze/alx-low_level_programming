@@ -1,63 +1,42 @@
-#include "lists.h"
 #include <stdlib.h>
+#include "lists.h"
 /**
-  *add_nodeint - adding a node at the front
-  *@head: pointer to the start of the list
-  *@n: a number with which to form a new node
-  *Return: count of the nodes
+  *insert_nodeint_at_index - insert an element in a list(structure)
+  *@head: a pointer to a pointer to a listint_t list
+  *@idx: index at which to insert
+  *@n: the number with which to create a node
+  *Return: address of new node
   */
-listint_t *add_nodeint(listint_t **head, const int n)
-{
-	listint_t *ptr;
 
-	ptr = (listint_t *) malloc(sizeof(listint_t));
-	if (ptr == NULL)
-		return (NULL);
-	ptr->n = n;
-	ptr->next = *(head);
-	*(head) = ptr;
-	return (ptr);
-}
-
-/**
-  *insert_nodeint_at_index - inserts a node at the index index
-  *@head: pointer to the start of the list
-  *@n: number for which to create a node
-  *@idx: an index from which to insert a node
-  *Return: pointer to the value of the node
-  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *prev, *curr, *new;
-	unsigned int count = 0;
+	unsigned int i = 0;
+	listint_t *tmp = *head;
+	listint_t *new = malloc(sizeof(listint_t));
 
-	if (!head || !*head)
-	{
+	if (!head || !*head || !new)
 		return (NULL);
-	}
-	else
+	new->n = n;
+	new->next = NULL;
+
+	if (idx == 0)
 	{
-		prev = curr = *head;
-
-		if (idx == 0)
-			return (add_nodeint(head, n));
-
-		while (curr && count <= idx)
-		{
-			if (count == idx)
-			{
-				new = (listint_t *)malloc(sizeof(listint_t));
-				if (!new)
-					return (NULL);
-				new->n = n;
-				new->next = curr;
-				prev->next = new;
-				return (new);
-			}
-			prev = curr;
-			curr = curr->next;
-			count++;
-		}
+		new->next = *head;
+		*head = new;
+		return (new);
 	}
+
+	while (tmp && i < idx)
+	{
+		if (i == idx - 1)
+		{
+			new->next = tmp->next;
+			tmp->next = new;
+			return (new);
+		}
+		tmp = tmp->next;
+		i++;
+	}
+	free(new);
 	return (NULL);
 }
