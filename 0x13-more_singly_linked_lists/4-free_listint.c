@@ -5,7 +5,7 @@
   *@head: pointer to the start of the list
   *Return: nothing
   */
-void free_listint(list_t *head)
+void free_listint(listint_t *head)
 {
 	listint_t *ptr = head;
 	listint_t *tmp;
