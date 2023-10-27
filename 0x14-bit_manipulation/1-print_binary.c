@@ -17,7 +17,7 @@ void print_binary(unsigned long int n)
 	{
 		if ((n & (1UL << (counter - 1))) >> (counter - 1))
 		{
-			k = 1;
+			k = 1;//100001
 			_putchar('1');
 		}
 		else if (k)
