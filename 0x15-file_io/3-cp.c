@@ -9,7 +9,7 @@
   */
 void printError1(void)
 {
-	dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);
 }
 /**
@@ -19,7 +19,7 @@ void printError1(void)
   */
 void printError2(char *c)
 {
-	dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read from file ", c);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", c);
 	exit(98);
 }
 /**
@@ -29,7 +29,7 @@ void printError2(char *c)
   */
 void printError3(char *c)
 {
-	dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't write to ", c);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", c);
 	exit(99);
 }
 
@@ -40,7 +40,7 @@ void printError3(char *c)
   */
 void printError4(int d)
 {
-	dprintf(STDERR_FILENO, "%s %d\n", "Can't close fd ", d);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", d);
 	exit(100);
 }
 
@@ -53,7 +53,7 @@ void printError4(int d)
 
 int main(int argc, char **argv)
 {
-	int fd, fd2, i = 1024;
+	int fd, fd2, bytes_read;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -66,18 +66,15 @@ int main(int argc, char **argv)
 
 	if (fd2 == -1)
 		printError3(argv[2]);
-	while (i == 1024)
+	while ((bytes_read = read(fd, buffer, 1024)) > 0)
 	{
-		i = 0;
-		if (read(fd, buffer, 1024) == -1)
-			printError2(argv[1]);
-		while (buffer[i])
-		{
-			if (write(fd2, &buffer[i], 1) == -1)
-				printError3(argv[2]);
-			i++;
-		}
+		if (write(fd2, buffer, bytes_read) == -1)
+			printError3(argv[2]);
 	}
+
+	if (bytes_read == -1)
+		printError2(argv[1]);
+
 	if (close(fd) == -1)
 		printError4(fd);
 	if (close(fd2) == -1)
