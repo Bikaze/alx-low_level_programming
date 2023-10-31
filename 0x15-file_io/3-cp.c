@@ -64,7 +64,7 @@ int main(int argc, char **argv)
 		printError2(argv[1]);
 	fd2 = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 
-	if (fd == -1)
+	if (fd2 == -1)
 		printError3(argv[2]);
 	while (i == 1024)
 	{
