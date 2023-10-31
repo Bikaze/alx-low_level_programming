@@ -3,12 +3,12 @@
 #include <unistd.h>
 #include "main.h"
 /**
-  *create_file - create a file
+  *append_text_to_file - append text to a file
   *@filename: name of the file to read
   *@text_content: this is the text to put in our file
   *Return: 1 or -1 (success and failure respectively)
   */
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	ssize_t fd;
 	int i = 0;
@@ -16,7 +16,7 @@ int create_file(const char *filename, char *text_content)
 	if (!filename)
 		return (-1);
 
-	fd = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0600);
+	fd = open(filename, O_WRONLY | O_APPEND);
 
 	if (fd == -1)
 		return (-1);
