@@ -14,13 +14,13 @@ int create_file(const char *filename, char *text_content)
 	ssize_t fd;
 	ssize_t written_bytes;
 
-	if (!filename || !text_content)
-		return (0);
+	if (!filename)
+		return (-1);
 
 	fd = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0600);
 
 	if (fd == -1)
-		return (0);
+		return (-1);
 
 	written_bytes = write(fd, text_content, strlen(text_content));
 
