@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 #include <stdlib.h>
 /**
   *insert_dnodeint_at_index - get the node at index (index)
@@ -21,7 +22,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		if (index == idx)
 		{
 			new->prev = ptr->prev;
-			(ptr->prev)->next = new;
+			if (idx == 0)
+				*h = new;
+			else
+				(ptr->prev)->next = new;
 			ptr->prev = new;
 			new->next = ptr;
 			return (new);
@@ -29,5 +33,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		ptr = ptr->next;
 		index++;
 	}
+	free(new);
 	return (NULL);
 }
