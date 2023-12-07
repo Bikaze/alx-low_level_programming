@@ -33,7 +33,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		ptr = ptr->next;
 		index++;
 	}
-	if (ptr == NULL)
+	if (index == idx)
 		add_dnodeint_end(h, n);
 	free(new);
 	return (NULL);
