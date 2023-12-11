@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc -c *.py -fpic
-gcc -shared *.o -o 100-operations.so
+gcc -c add.c mod.c sub.c mul.c div.c -fpic
+gcc -shared add.o mod.o sub.o mul.o div.o -o 100-operations.so
