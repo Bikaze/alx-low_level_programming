@@ -12,14 +12,14 @@ int add_node(hash_node_t **head, const char *key, const char *value);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *slot;
+	hash_node_t **slot;
 	hash_node_t *found;
 
 	if (key == NULL)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	slot = (ht->array)[index];
-	found = iterate_list(slot, key);
+	slot = ht->array;
+	found = iterate_list(slot[index], key);
 
 	if (found != NULL)
 	{
@@ -28,7 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		add_node(&slot, key, value);
+		add_node(&slot[index], key, value);
 	}
 	return (1);
 }
