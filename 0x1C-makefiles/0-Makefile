@@ -1,4 +1,3 @@
-.PHONY: all
 SRCS := $(wildcard *.c)
 all:
 	gcc $(SRCS) -o school
