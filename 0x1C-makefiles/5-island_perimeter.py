@@ -7,9 +7,6 @@
 def island_perimeter(grid):
     """grid: 2x2 interger nested list"""
 
-    if not grid or len(grid) > 100 or len(grid[0]) > 100:
-        return 0
-
     perimeter = 0
     for j in range(len(grid)):
         for i in range(len(grid[0])):
